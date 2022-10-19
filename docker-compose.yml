@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - 8080:5000
+    depends_on:
+      - es
+    restart: always
+
+  es:
+    image: elasticsearch:2.3.0
+    restart: always
