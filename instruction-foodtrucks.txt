@@ -1,4 +1,4 @@
-Food Trucks
+dicker Food Trucks
 ===========
 Food Trucks is a two-tier web application:
 - Data about food trucks in SF is stored in ElasticSearch.
