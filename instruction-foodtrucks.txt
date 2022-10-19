@@ -1,0 +1,51 @@
+Food Trucks
+===========
+Food Trucks is a two-tier web application:
+- Data about food trucks in SF is stored in ElasticSearch.
+- A web application shows this data based on Python/Flask.
+
+1. Use sources found in project sub-directory. Read the docs!
+
+2. Build the Flask application. Note that you need `python2`, and both `pip` and `npm`!
+   Step A: "Fat" docker image:
+   - Start with an empty Alpine image.
+   - Install all tools you need. Note that Python2 is supported only up to Alpine version 3.15!
+   - Build the application.
+   - Execute it.
+   Step B: "Thin" docker image:
+   - Use multi-stage dockerfile to minimize the content of the image.
+
+   Compare image sizes between steps.
+
+3. Create `docker-compose.yml` to start the system.
+
+4. Add an Nginx based reverse proxy as part of your `docker-compose.yaml`.
+
+5. Serve all static files (including `index.html`) directly from Nginx. Update your Flask image so that it *does not* contain the static files.
+
+---
+
+To hand in
+----------
+- An architecture drawing.
+- A zip file with your name, containing a directory with your name.
+  - In the directory - an `init.sh` executable which runs all the bash commands for your project to run on localhost.
+  - Do not forget to include all the resources for it to work.
+
+Directory tree example (files are shown only for project directory, files in other directories are not shown here):
+chris
+└── project
+    ├── flask-app
+    │   ├── static
+    │   │   ├── build
+    │   │   ├── icons
+    │   │   ├── src
+    │   │   │   └── components
+    │   │   └── styles
+    │   └── templates
+    ├── init.sh
+    ├── README.md
+    ├── shot.png
+    └── utils
+
+(Note: your directory tree does not have to completely match this one! This is only an example)
